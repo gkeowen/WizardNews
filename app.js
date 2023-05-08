@@ -6,7 +6,7 @@ const postBank = require("./postBank");
 app.use(morgan('dev'));
 app.use(express.static('public'))
 
-const PORT = 1337;
+const { PORT = 1337 } = process.env;
 
 app.get("/", (req, res) => {
   const posts = postBank.list();
